@@ -12,7 +12,7 @@ const Navbar = () => {
   return (
     <div className="header">
       <nav className="navbar">
-        <Link to={HOME}>Imagen</Link>
+        <Link to={HOME}><img width="25%" src= "/src/assets/logoMarvel.png" /></Link>
         <div className="hamburguer" onClick={handleClick}>
           {click ? (
             <FaTimes size={30} style={{ color: "#ffffff" }} />

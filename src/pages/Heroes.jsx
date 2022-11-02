@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Footer, Navbar } from "../components";
 
+
 // https://gateway.marvel.com:443/v1/public/characters?apikey=787c7db569498ca082aed35152ede826
 // 787c7db569498ca082aed35152ede826 public
 // a4a872fdabbc07a433e0aeaf550c3c829633557f private
@@ -15,8 +16,7 @@ const heroes = () => {
   useEffect(() => {
     axios
       .get(
-        // "https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=787c7db569498ca082aed35152ede826&hash=38cf9265c36a7a70e5641f00691f08cf"
-        "https://gateway.marvel.com:443/v1/public/characters?ts=1&limit=50&apikey=787c7db569498ca082aed35152ede826&hash=38cf9265c36a7a70e5641f00691f08cf"
+        "https://gateway.marvel.com:443/v1/public/characters?ts=1&limit=100&apikey=787c7db569498ca082aed35152ede826&hash=38cf9265c36a7a70e5641f00691f08cf"
       )
       .then((res) => {
         setData(res.data.data.results);
@@ -28,6 +28,7 @@ const heroes = () => {
 
   return (
     <div className="App">
+      <script type="module" src="./src/function.js"></script>
       <Navbar />
       <div className="flex flex-wrap my-7 justify-center gap-6 items-center">
         {data.map((heroe) => {
